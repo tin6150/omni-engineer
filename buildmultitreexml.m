@@ -23,21 +23,6 @@ rng(187989)
 %## 3. Replace the single FASTA reading with a loop to read multiple files:
 %## ```
 %## /edit line starting with "fasta = fastaread" until line starting with "compregion ="
-%## all_fasta = cell(1, length(fastafiles));
-%## for i = 1:length(fastafiles)
-    %## all_fasta{i} = fastaread(fastafiles{i});
-%## end
-
-% Determine the common region length (assuming all files have the same length)
-%## compregion = 1:length(all_fasta{1}(1).Sequence);
-%## ```
-
-
-
-%// fasta = fastaread('data/coregenome_snp_aln.fasta');
-%%
-
-%// compregion = 1:length(fasta(1).Sequence);
 
 all_fasta = cell(1, length(fastafiles));
 for i = 1:length(fastafiles)
@@ -46,19 +31,7 @@ end
 
 % Determine the common region length (assuming all files have the same length)
 compregion = 1:length(all_fasta{1}(1).Sequence);
-```
 
-
-%//for a = 1 : length(fasta)
-    %//disp(a)
-    %//for b = a+1:length(fasta)
-        %//indices = find(fasta(a).Sequence(compregion)~=fasta(b).Sequence(compregion));        
-        %//red_indices = find(fasta(a).Sequence(indices)=='-' | fasta(b).Sequence(indices)=='-');
-        %//pdist(a,b) = length(indices)-length(red_indices);
-        %//pdist(b,a) = pdist(a,b);
-    %//end
-%//end
-%%
 
 %##4. Update the distance calculation to work with multiple FASTA files:
 %##```

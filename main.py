@@ -48,7 +48,8 @@ client = OpenAI(
 )
 
 ##Sn50
-print( CBORG_API_KEY )
+#print( CBORG_API_KEY )
+#print( api_key )
 DEFAULT_MODEL = "anthropic/claude-sonnet"
 EDITOR_MODEL = "google/gemini-pro-1.5"
 

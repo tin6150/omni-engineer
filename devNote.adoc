@@ -1,0 +1,24 @@
+. .env.NO_CHECK_IN
+python3 main.py
+
+/help
+
+/add buildmultitreexml.m 
+
+You: 
+
+# commands to AI:
+
+convert buildmultitreexml.m to python
+# lot of output and steps on the console
+
+convert buildmultitreexml.m to python, saving to a file buildMultiTreeXml_2.py
+# did not save to file
+
+
+
+edit uildmultitreexml.m so that it can read multiple fasta file 
+
+still just spitting out lots of instructions.
+saved to gdoc
+https://docs.google.com/document/d/1NJCTTanDLy9dwodsae9lghjb7-PhdfSrtlZHEvcXdrg/edit

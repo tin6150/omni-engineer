@@ -26,15 +26,34 @@ from prompt_toolkit.application.current import get_app
 
 is_diff_on = True
 
+
+# tmp, not sure why they heck it is not reading from the shell's ENV, even after having sourced .env file
+# no, need to connect to model with cborg URL !
+#xx OPENROUTER_API_KEY='sk-7UaLxxxxxxxxxz3tJtzXAA'
+#xx print( OPENROUTER_API_KEY )
+
+
 init(autoreset=True)
 load_dotenv()
+#client = OpenAI(
+#    base_url="https://openrouter.ai/api/v1",
+#    api_key=os.getenv("OPENROUTER_API_KEY"),
+#)
+
+# https://cborg.lbl.gov/api_examples/
+#client = openai.OpenAI(
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENROUTER_API_KEY"),
+    api_key=os.environ.get('CBORG_API_KEY'), # Please do not store your API key in the code
+    base_url="https://api.cborg.lbl.gov" # Local clients can also use https://api-local.cborg.lbl.gov
 )
 
-DEFAULT_MODEL = "anthropic/claude-3.5-sonnet"
+##Sn50
+print( CBORG_API_KEY )
+DEFAULT_MODEL = "anthropic/claude-sonnet"
 EDITOR_MODEL = "google/gemini-pro-1.5"
+
+##DEFAULT_MODEL = "anthropic/claude-3.5-sonnet"
+##EDITOR_MODEL = "google/gemini-pro-1.5"
 # Other common models:
 # "openai/gpt-4o-2024-08-06"
 # "meta-llama/llama-3.1-405b-instruct"

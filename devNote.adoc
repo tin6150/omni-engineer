@@ -22,3 +22,11 @@ edit uildmultitreexml.m so that it can read multiple fasta file
 still just spitting out lots of instructions.
 saved to gdoc
 https://docs.google.com/document/d/1NJCTTanDLy9dwodsae9lghjb7-PhdfSrtlZHEvcXdrg/edit
+
+
+~~
+
+# explain code?
+
+buildmultitreexml_annot.m is a matlab script that read in fasta file and convert to xml per a template file.  explain what the various block of codes are doing.
+

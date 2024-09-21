@@ -3,10 +3,10 @@
 %% >> %%
 
 % 🤖 Assistant:
-// Certainly! I'll explain the main blocks of code in the buildmultitreexml_annot.m script:
+%% Certainly! I'll explain the main blocks of code in the buildmultitreexml_annot.m script:
 
 
-// This script essentially takes sequence data and metadata, performs some clustering and distance calculations, and then generates XML files suitable for phylogenetic analysis, likely for use with BEAST (Bayesian Evolutionary Analysis Sampl
+%% This script essentially takes sequence data and metadata, performs some clustering and distance calculations, and then generates XML files suitable for phylogenetic analysis, likely for use with BEAST (Bayesian Evolutionary Analysis Sampl
 
 
 
@@ -19,13 +19,13 @@ rng(187989)
 fasta = fastaread('data/coregenome_snp_aln.fasta');
 %%
 
-// 1. Initial setup and data loading:
-//    - Clears workspace and sets random number generator seed
-//    - Reads a FASTA file containing core genome SNP alignment
+%% 1. Initial setup and data loading:
+%%    - Clears workspace and sets random number generator seed
+%%    - Reads a FASTA file containing core genome SNP alignment
 
-// 2. Pairwise distance calculation:
-//    - Computes pairwise distances between sequences
-//    - Stores distances in the 'pdist' matrix
+%% 2. Pairwise distance calculation:
+%%    - Computes pairwise distances between sequences
+%%    - Stores distances in the 'pdist' matrix
 
 
 
@@ -43,9 +43,9 @@ end
 %%
 
 
-// 3. Clustering sequences:
-//    - Groups sequences into clusters based on a minimum distance threshold
-//    - Stores cluster members in the 'members' cell array
+%% 3. Clustering sequences:
+%%    - Groups sequences into clusters based on a minimum distance threshold
+%%    - Stores cluster members in the 'members' cell array
 
 
 members = cell(0,0);
@@ -87,9 +87,9 @@ end
 %%
 
 
-// 4. Metadata loading:
-//    - Reads metadata from a CSV file
-//    - Stores sequence IDs, dates, and other information in the 'id' cell array
+%% 4. Metadata loading:
+%%    - Reads metadata from a CSV file
+%%    - Stores sequence IDs, dates, and other information in the 'id' cell array
 
 
 f = fopen('data/SF_metadata.csv');fgets(f);
@@ -110,23 +110,23 @@ fclose(f);
 
 
 
-// 5. XML generation loop:
-//    - Iterates 3 times (0 to 2) to create multiple XML files
-//    - Opens a template XML file and a new output XML file
+%% 5. XML generation loop:
+%%    - Iterates 3 times (0 to 2) to create multiple XML files
+%%    - Opens a template XML file and a new output XML file
 
-// 6. XML content generation:
-//    - Processes the template file line by line
-//    - Replaces placeholder text with generated content:
-//      a. insert_sequences: Adds sequence data for each cluster
-//      b. insert_trees: Creates tree structures for each cluster
-//      c. insert_rootlengths: Adds root length parameters
-//      d. insert_init: Initializes random trees for clusters with multiple sequences
-//      e. insert_types: Adds sequence type information
-//      f. insert_taxa: Adds taxon information
-//      g. insert_rootstrees: References trees and root lengths
-//      h. insert_clock: Sets the clock rate
-//      i. insert_treelikelihood: Adds tree likelihood distributions
-//      j. insert_tree_operators: Adds various tree operators for MCMC analysis
+%% 6. XML content generation:
+%%    - Processes the template file line by line
+%%    - Replaces placeholder text with generated content:
+%%      a. insert_sequences: Adds sequence data for each cluster
+%%      b. insert_trees: Creates tree structures for each cluster
+%%      c. insert_rootlengths: Adds root length parameters
+%%      d. insert_init: Initializes random trees for clusters with multiple sequences
+%%      e. insert_types: Adds sequence type information
+%%      f. insert_taxa: Adds taxon information
+%%      g. insert_rootstrees: References trees and root lengths
+%%      h. insert_clock: Sets the clock rate
+%%      i. insert_treelikelihood: Adds tree likelihood distributions
+%%      j. insert_tree_operators: Adds various tree operators for MCMC analysis
 
 
 
@@ -231,5 +231,5 @@ for rep = 0:2
     fclose(g);   
 end
 
-// 7. File closing:
-//    - Closes the template and output XML files
+%% 7. File closing:
+%%    - Closes the template and output XML files
